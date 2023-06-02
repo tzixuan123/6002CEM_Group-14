@@ -56,4 +56,45 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
   );
 }
 
+// Sign Up $ Sign Up Button
+Container signInSignUpButton(
+    // Function onTap is a Callback function
+    BuildContext context, bool isLogin, Function onTap) {
 
+  // wrapped it inside a container
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    height: 50,
+    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+    // Circular radius for box
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
+    child: ElevatedButton(
+      // Tab function
+      onPressed: () {
+        onTap();
+      },
+      child: Text(
+
+        // Log In and Sign Up  button text
+        isLogin ? 'LOG IN' : 'SIGN UP',
+
+        // Text Styling
+        style: const TextStyle(
+            color: Colors.black87, fontSize: 16, fontStyle: FontStyle.italic),
+      ),
+      style: ButtonStyle(
+        //Background color
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.pressed)) {
+
+              // The button is white, when we click on it then it will be yellow
+              return Colors.yellow;
+            }
+            return Colors.white;
+          }),
+          //Shape of the button will be rounded circular 30
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
+    ),
+  );
+}
