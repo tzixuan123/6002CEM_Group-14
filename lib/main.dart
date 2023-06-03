@@ -1,7 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/signin_screen.dart';
 
-void main() {
+void main() async {
+  // Make sure the firebase is initialized before run the our application to Firebase
+  // This part will makesure our Firebase is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
