@@ -25,15 +25,15 @@ class Recipe_card extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: Checkbox(
-            value: recipe.status,
-            onChanged: (value) {
-              update(recipe.id, value!);
-            }),
+        // leading: Checkbox(
+        //     value: recipe.status,
+        //     onChanged: (value) {
+        //       update(recipe.id, value!);
+        //     }),
         title: Text(recipe.title),
         subtitle: Text(
           recipe.description,
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
         ),
         trailing: Text(
           recipe.category,
