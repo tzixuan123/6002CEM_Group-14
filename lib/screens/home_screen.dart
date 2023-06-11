@@ -12,19 +12,33 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        // Icon At Appbar
+        //title: Text ('Recipe HomePage'),
 
-    // Set to Center
-    return Center(
-      child: ElevatedButton(
-        child: Text("Logout"),
-        onPressed: (){
-          // Logout button
-          FirebaseAuth.instance.signOut().then((value){
-            print("Signed Out ");
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignInScreen()));
-          });
-        },
+        // Logo - Image View
+          title: const Image(
+            image: AssetImage("assets/images/cooking.png"),
+          width: 50,
+        ),
+        centerTitle: true,
+        actions: [
+          // Log-out Button
+          IconButton(
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut().then((value) {
+                print("Signed Out");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignInScreen()));
+              });
+            },
+            icon: const Icon(Icons.logout),
+          ),
+        ],
+      ),
+      body: Container(
       ),
     );
   }
