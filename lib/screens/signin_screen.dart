@@ -47,7 +47,7 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               children: <Widget>[
                 // logoWidget has been declared below.
-                logoWidget("assets/images/Food icon.png"),
+                logoWidget("assets/images/signin_logo.png"),
 
                 // Display the Email and Password Textfield in the login page.
                 SizedBox(
@@ -55,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
 
                 // Used Reusable widget for the box
-                reusableTextField("Enter Username", Icons.person_outline, false,
+                reusableTextField("Enter Email", Icons.person_outline, false,
                     _emailTextController),
                 SizedBox(
                   height: 20,
