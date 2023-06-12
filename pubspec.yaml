@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.13.1
   firebase_auth: ^4.6.2
+  # smooth indicator for the tutorial page
+  smooth_page_indicator: ^1.0.0
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/Recipe.dart';
 import 'package:recipe_app/screens/signin_screen.dart';
+import 'package:recipe_app/screens/tutorial_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.indigo.shade50,
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
         automaticallyImplyLeading: false,
         // Icon At Appbar
         //title: Text ('Recipe HomePage'),
@@ -63,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const Center(
                     child: Text(
-                      'Recipe Home',
+                      'Epicook',
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
@@ -134,14 +136,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontColor: Colors.white,
                       ),
                       _cardmenu(
-                        //onTap: () {
-                        // Navigator.push(
-                        //  context,
-                        // MaterialPageRoute(
-                        //   builder: (context) => const recipe_details(),
-                        // ),
-                        //  );
-                        //  },
+                          onTap: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                           builder: (context) => const tutorial_page(),
+                         ),
+                          );
+                          },
                         title: 'Tutorial',
                         icon: "assets/images/tutorial.png",
                         color: Colors.purple,
