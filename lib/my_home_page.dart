@@ -63,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       appBar: AppBar(
+        backgroundColor: Colors.blue[150],
         title: Text("Recipe : $viewCategory"),
         actions: [
           PopupMenuButton(
