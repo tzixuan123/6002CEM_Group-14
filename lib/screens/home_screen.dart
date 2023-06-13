@@ -2,9 +2,11 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:recipe_app/API/api.dart';
 import 'package:recipe_app/screens/Recipe.dart';
 import 'package:recipe_app/screens/signin_screen.dart';
-import 'package:recipe_app/screens/tutorial_page.dart';
+import 'package:recipe_app/tutorial/tutorial_page.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
         automaticallyImplyLeading: false,
+
         // Icon At Appbar
         //title: Text ('Recipe HomePage'),
 
@@ -53,13 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ListView(
                 physics: const BouncingScrollPhysics(),
                 children: [
-                  Center(
-                    child: Image.asset(
-                      "assets/images/homepage_icon.png",
-                      scale: 1.2,
-                      height: 250,
-                    ),
-                  ),
+
                   const SizedBox(
                     height: 16,
                   ),
@@ -68,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       'Epicook',
                       style: TextStyle(
                         fontSize: 32,
+                        color: Colors.indigo,
+                        fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -75,18 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 48,
                   ),
-                  //const Text(
-                   // 'SERVICES',
-                  //  style: TextStyle(
-                  //    fontStyle: FontStyle.italic,
-                   //   fontSize: 20,
-                  //    fontWeight: FontWeight.bold,
-                  //  ),
-                 // ),
+
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
+                      //Recipe List Function
                       _cardmenu(
                         onTap: () {
                           Navigator.push(
@@ -101,15 +95,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.greenAccent,
                         fontColor: Colors.black,
                       ),
+
+                      //API Function
                       _cardmenu(
-                        //onTap: () {
-                        // Navigator.push(
-                        //  context,
-                        // MaterialPageRoute(
-                        //   builder: (context) => const recipe_details(),
-                        // ),
-                        //  );
-                        //  },
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const api_page(),
+                            ),
+                          );
+                        },
                         title: 'API',
                         icon: "assets/images/api.png",
                         color: Colors.black,
@@ -118,9 +114,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const SizedBox(height: 28),
+
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
+                      //Recommend App Function
                       _cardmenu(
                         //onTap: () {
                         // Navigator.push(
@@ -136,11 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontColor: Colors.white,
                       ),
                       _cardmenu(
+                        //Tutorial Function
                           onTap: () {
                           Navigator.push(
                           context,
                           MaterialPageRoute(
-                           builder: (context) => const tutorial_page(),
+                          builder: (context) => const tutorial_page(),
                          ),
                           );
                           },

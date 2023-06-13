@@ -39,10 +39,15 @@ dependencies:
   firebase_auth: ^4.6.2
   # smooth indicator for the tutorial page
   smooth_page_indicator: ^1.0.0
+  # tutorial
+  introduction_screen: ^2.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
