@@ -60,8 +60,8 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       colors: [
-                        const Color(0xff213A50),
-                        const Color(0xff071930)
+                        const Color(0xfffb8c00),
+                        const Color(0xffffd180)
                       ]
                   )
               ),
@@ -76,26 +76,29 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: kIsWeb ? MainAxisAlignment.start :
                       MainAxisAlignment .center,
                       children: <Widget>[
-                        Text('food',style: TextStyle(
-                          fontSize: 18,
+                        Text('Epi C',style: TextStyle(
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                           color: Colors.white
                         ),),
 
-                        Text("Recipe", style: TextStyle(
-                            fontSize: 18,
+                        Text("ook", style: TextStyle(
+                            fontSize: 20,
                             color: Colors.blue
                         ),)
 
                       ],
                     ),
                     SizedBox(height: 30,),
-                    Text("data",style: TextStyle( fontSize: 20,
+                    Text("Welcome",style: TextStyle( fontSize: 20,
                       color: Colors.white
                     ),
 
                     ),
-                    Text("data"),
+                    Text("What we cooking today?",style: TextStyle( fontSize: 20
+                    ),
+
+                    ),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       child: Row(
@@ -104,7 +107,7 @@ class _HomeState extends State<Home> {
                             child: TextField(
                               controller: textEditingController,
                               decoration: InputDecoration(
-                                hintText: "Enter",
+                                hintText: "Enter any ingredients here",
                                 hintStyle:TextStyle(
                                   fontSize: 18,
                                 color: Colors.white.withOpacity(0.5)
@@ -209,7 +212,7 @@ class _RecipieTileState extends State<RecipieTile> {
               children: <Widget>[
                 Image.network(
                   widget.imgUrl,
-                  height: 200,
+                  height: 180,
                   width: 200,
                   fit: BoxFit.cover,
                 ),

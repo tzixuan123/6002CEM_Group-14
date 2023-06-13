@@ -36,7 +36,7 @@ class _RecipeViewState extends State<RecipeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.black54,
+        color: Colors.orangeAccent,
 
         child: Column(
         children: <Widget>[
@@ -47,13 +47,13 @@ class _RecipeViewState extends State<RecipeView> {
               mainAxisAlignment: kIsWeb ? MainAxisAlignment.start :
               MainAxisAlignment .center,
               children: <Widget>[
-                Text('food',style: TextStyle(
+                Text('Epi C',style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.white
                 ),),
 
-                Text("Recipe", style: TextStyle(
+                Text("ook", style: TextStyle(
                     fontSize: 18,
                     color: Colors.blue
                 ),)
@@ -61,21 +61,23 @@ class _RecipeViewState extends State<RecipeView> {
               ],
             ),
           ),
-          Container(height: MediaQuery.of(context).size.height - (Platform.isIOS ? 104 : 30),
-            width: MediaQuery.of(context).size.width,
-            child: WebView(
-              onPageFinished: (val){
-                print(val);
-              },
-              javascriptMode: JavascriptMode.unrestricted,
-              initialUrl: finalUrl,
-              onWebViewCreated: (WebViewController webViewController) {
-                setState(() {
-                  _controller.complete(webViewController);
-                });
-              },
+          Expanded(
+            child: Container(height: MediaQuery.of(context).size.height - (Platform.isIOS ? 104 : 30),
+              width: MediaQuery.of(context).size.width,
+              child: WebView(
+                onPageFinished: (val){
+                  print(val);
+                },
+                javascriptMode: JavascriptMode.unrestricted,
+                initialUrl: finalUrl,
+                onWebViewCreated: (WebViewController webViewController) {
+                  setState(() {
+                    _controller.complete(webViewController);
+                  });
+                },
 
 
+              ),
             ),
           )
         ],

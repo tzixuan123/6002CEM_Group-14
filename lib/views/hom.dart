@@ -11,12 +11,14 @@ class hom extends StatelessWidget {
         icon: Icon(Icons.arrow_back, color: Colors.black),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      title: Text("Title"),
+      title: Text("EpiCook"),
       centerTitle: true,
     ),
       body: Center(
+
+
         child: ElevatedButton(
-          child: const Text('Open route'),
+          child: const Text('Go to Search'),
           onPressed: () {
           Navigator.push(
           context,
