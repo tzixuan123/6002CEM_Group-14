@@ -36,7 +36,7 @@ class tutorial_page extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Discover the best \norganic recipe. ",
+                    "How to Enchance Your Cooking and Your Recipes",
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w600,
@@ -46,7 +46,7 @@ class tutorial_page extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    "Step 1: Find Ingredient for your recipe",
+                    "Step 1: Use fresh ingredient whenever possible.",
                     style: TextStyle(fontSize: 20, color: Colors.lightGreen),
                   ),
                   SizedBox(height: 20,),

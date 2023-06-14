@@ -42,6 +42,9 @@ dependencies:
   # tutorial
   introduction_screen: ^2.1.0
 
+  # carousel_slider
+  carousel_slider: ^4.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

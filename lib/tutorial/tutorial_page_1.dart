@@ -36,7 +36,7 @@ class tutorial_page_1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Time for Cook ",
+                    "How to Use Essential Cooking Techniques ",
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w600,
@@ -46,7 +46,7 @@ class tutorial_page_1 extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    "Step 2: Find the recipe and Cook for your loved one",
+                    "Step 2: Cook foods in water at or near the boiling point",
                     style: TextStyle(fontSize: 20, color: Colors.lightGreen),
                   ),
                   SizedBox(

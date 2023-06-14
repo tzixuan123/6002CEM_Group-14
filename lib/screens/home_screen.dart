@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/API/api.dart';
+import 'package:recipe_app/recommend%20app/recommend_app.dart';
 import 'package:recipe_app/screens/Recipe.dart';
 import 'package:recipe_app/screens/signin_screen.dart';
 import 'package:recipe_app/tutorial/tutorial_page.dart';
@@ -122,14 +123,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       //Recommend App Function
                       _cardmenu(
-                        //onTap: () {
-                        // Navigator.push(
-                        //  context,
-                        // MaterialPageRoute(
-                        //   builder: (context) => const recipe_details(),
-                        // ),
-                        //  );
-                        //  },
+                        onTap: () {
+                         Navigator.push(
+                          context,
+                         MaterialPageRoute(
+                           builder: (context) => const recommend_app(),
+                         ),
+                          );
+                          },
                         title: 'Recommend Apps',
                         icon: "assets/images/apps.png",
                         color: Colors.orangeAccent,

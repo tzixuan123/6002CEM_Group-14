@@ -46,7 +46,7 @@ class tutorial_page_2 extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    "Last Steps: ",
+                    "Last Steps: Practice cooking recipes when time is not a factor",
                     style: TextStyle(fontSize: 20, color: Colors.lightGreen),
                   ),
                   SizedBox(height: 20,),
