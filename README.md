@@ -1,16 +1,10 @@
-# recipe_app
+# recipe_app (Epicook)
 
-A new Flutter project.
+This recipe app is an application that allow users to get in touch without going through any tutorial. The features that provided inside the application is listed below: 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Authentication: Registration, Log In, and Logout
+- Homepage: Well-designed and Clear Indicator
+- Recipe API: Clear list of recipes (search function, image, name, and recipe details)
+- Recipe Library: Enables users to record their own recipe list by categories
+- App Recommendations: Enables users to take a look on the popular recipe app
+- Tutorial: Allows the user to understand the overall flow of the system provided
