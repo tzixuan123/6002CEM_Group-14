@@ -13,7 +13,7 @@ class _recommend_appState extends State<recommend_app> {
   int _current = 0;
 
   // Text, image URL, desription for displayed
-  List<dynamic> _movies = [
+  List<dynamic> _Rapps = [
     {
       'title': 'Yummly',
       'image': 'https://cdn.dribbble.com/users/1588660/screenshots/10817652/media/7bdbbc5b34da25a4a2f53c8082e9a328.jpg',
@@ -28,7 +28,7 @@ class _recommend_appState extends State<recommend_app> {
       'title': 'Pinterest',
       'image': 'https://cdn.dribbble.com/userupload/6189141/file/original-68466bbaaa29a5710862d87372e713c9.png?compress=1&resize=1200x900&vertical=center',
       'description': 'The best part of Pinterest is discovering new things and ideas from people around the world.'
-    }
+    },
   ];
 
   @override
@@ -61,7 +61,7 @@ class _recommend_appState extends State<recommend_app> {
           children: [
 
             // Set the image to Image.network to link
-            Image.network(_movies[_current]['image'], fit: BoxFit.cover),
+            Image.network(_Rapps[_current]['image'], fit: BoxFit.cover),
             Positioned(
               top: 0,
               left: 0,
@@ -117,7 +117,7 @@ class _recommend_appState extends State<recommend_app> {
                 ),
                 carouselController: _carouselController,
 
-                items: _movies.map((movie) {
+                items: _Rapps.map((movie) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
@@ -164,7 +164,7 @@ class _recommend_appState extends State<recommend_app> {
                                 SizedBox(height: 20),
                                 AnimatedOpacity(
                                   duration: Duration(milliseconds: 500),
-                                  opacity: _current == _movies.indexOf(movie)
+                                  opacity: _current == _Rapps.indexOf(movie)
                                       ? 1.0
                                       : 0.0,
                                   child: Container(
