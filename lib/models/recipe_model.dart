@@ -1,4 +1,3 @@
-// @dart=2.9
 class RecipeModel{
 
   String label;
@@ -6,7 +5,7 @@ class RecipeModel{
   String source;
   String url;
 
-  RecipeModel({this.url,this.source,this.image,this.label});
+  RecipeModel({required this.url,required this.source,required this.image,required this.label});
 
   factory RecipeModel.fromMap(Map<String,dynamic> parsedJson){
     return RecipeModel(

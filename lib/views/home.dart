@@ -5,8 +5,10 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled3/models/recipe_model.dart';
-import 'package:untitled3/views/recipe_view.dart';
+
+import 'package:recipe_app/views/recipe_view.dart';
+import 'package:recipe_app/models/recipe_model.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
@@ -18,7 +20,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<RecipeModel> recipes = new List<RecipeModel>();
+  List<RecipeModel> recipes = <RecipeModel>[];
 
   TextEditingController textEditingController = new TextEditingController();
 
@@ -34,7 +36,7 @@ class _HomeState extends State<Home> {
     jsonData["hits"].forEach((element){
       //print(element.toString());
 
-      RecipeModel recipeModel = new RecipeModel();
+      RecipeModel recipeModel = new RecipeModel(url: '', source: '', image: '', label: '');
       recipeModel = RecipeModel.fromMap(element["recipe"]);
       recipes.add(recipeModel);
       
@@ -172,7 +174,7 @@ class _HomeState extends State<Home> {
 class RecipieTile extends StatefulWidget {
   final String title, desc, imgUrl, url;
 
-  RecipieTile({this.title, this.desc, this.imgUrl, this.url});
+  RecipieTile({required this.title, required this.desc, required this.imgUrl, required this.url});
 
   @override
   _RecipieTileState createState() => _RecipieTileState();
@@ -263,10 +265,10 @@ class GradientCard extends StatelessWidget {
   final String bottomColorCode;
 
   GradientCard(
-      {this.topColor,
-        this.bottomColor,
-        this.topColorCode,
-        this.bottomColorCode});
+      {required this.topColor,
+        required this.bottomColor,
+        required this.topColorCode,
+        required this.bottomColorCode});
 
   @override
   Widget build(BuildContext context) {

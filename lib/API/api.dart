@@ -20,12 +20,12 @@ class hom extends StatelessWidget {
         child: ElevatedButton(
           child: const Text('Go to Search'),
           onPressed: () {
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Home()),
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
             );
-        },
-      ),
+          },
+        ),
       ),
     );
 

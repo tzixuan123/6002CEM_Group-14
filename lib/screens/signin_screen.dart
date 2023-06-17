@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/reusable_widgets/reusable_widget.dart';
+import 'package:recipe_app/screens/home_screen.dart';
 import 'package:recipe_app/screens/signup_screen.dart';
 import 'package:recipe_app/utills/color_utills.dart';
 
@@ -45,13 +47,15 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               children: <Widget>[
                 // logoWidget has been declared below.
-                logoWidget("assets/images/Food icon.png"),
+                logoWidget("assets/images/signin_logo.png"),
 
                 // Display the Email and Password Textfield in the login page.
                 SizedBox(
                   height: 30,
                 ),
-                reusableTextField("Enter Username", Icons.person_outline, false,
+
+                // Used Reusable widget for the box
+                reusableTextField("Enter Email", Icons.person_outline, false,
                     _emailTextController),
                 SizedBox(
                   height: 20,
@@ -61,8 +65,20 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                //Call for SignInSignUp button - Set to True - Because it's for login not logout
-                signInSignUpButton(context, true, (){}),
+                //Call for SignInSignUp button - Set to True - Because both will redirect to Homepage
+                // SignIn
+                signInSignUpButton(context, true, () {
+                  FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text).then((value){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+
+                    // Print error to user. When password or email is invalid
+                  }).onError((error, stackTrace){
+                    print("Error ${error.toString()}");
+                  });
+                }),
                 signUpOption()
               ],
             ),
@@ -71,22 +87,27 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
   // Create a SignUp Option out of the Scaffold
-  Row signUpOption(){
+  Row signUpOption() {
     return Row(
       // Set the text to Text to Main Axis - Center
       // So all the text will be align to center
       mainAxisAlignment: MainAxisAlignment.center,
       // Created a row with 2 Text within
       children: [
-        const Text("Don't have account?", style: TextStyle(color:Colors.white)),
+        const Text("Don't have account?",
+            style: TextStyle(color: Colors.white)),
         GestureDetector(
-          onTap: (){
+          onTap: () {
             // Sign Up button - Redirect to the signup page.
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SignUpScreen()));
           },
-        child: const Text("Sign Up", style: TextStyle(color: Colors.yellow, fontWeight: FontWeight.bold),
-        ),
+          child: const Text(
+            "Sign Up",
+            style: TextStyle(color: Colors.yellow, fontWeight: FontWeight.bold),
+          ),
         )
       ],
     );

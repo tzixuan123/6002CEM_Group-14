@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "40307419208",
+    "project_id": "recipe-da70a",
+    "storage_bucket": "recipe-da70a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40307419208:android:43a13a360cbcfbdccb507d",
+        "android_client_info": {
+          "package_name": "com.example.recipe_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40307419208-b5p0odkhcflqh87moqh73vg6k9ov817m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUC156CENswlPLELlfBlGU0cWwR1rFQXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40307419208-b5p0odkhcflqh87moqh73vg6k9ov817m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
