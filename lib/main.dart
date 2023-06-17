@@ -1,7 +1,15 @@
+import 'dart:io';
+import 'package:recipe_app/views/hom.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/signin_screen.dart';
 
-void main() {
+void main() async {
+  // Make sure the firebase is initialized before run the our application to Firebase
+  // This part will makesure our Firebase is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -25,8 +33,59 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const SignInScreen(),
+      home:  const Splash(),
     );
   }
 }
+
+class Splash extends StatefulWidget{
+  const Splash({Key? key}) : super (key: key);
+
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash>{
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // Set the Splash screen to load 3 second before navigator to Signin Screen
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
+    });
+  }
+
+  // Splash Screen - Setup
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      backgroundColor: Colors.amber,
+      body: Center(
+        child: Column(
+          // Set the Image to Center
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Inserts image
+            Image.asset("assets/images/icon_splash.png", height: 130,),
+            const SizedBox(height: 30,),
+            if(Platform.isAndroid)
+              // Loading indicator
+              const CupertinoActivityIndicator(
+                radius: 20,
+              )
+            else
+              const CircularProgressIndicator(
+                color: Colors.white,
+              )
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
 
